@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="../bootstrap-5.3.0/css/bootstrap.min.css">
 </head>
 <body>
-    
+<div class='container'>
+<?php  include('header.php');   ?>
+
+<div style="height: 70vh;">
 
 <?php
 include_once('db.php');
@@ -16,10 +19,10 @@ $sql = "SELECT  p_id, p_name, p_price, p_detail FROM product";
 
 $result = $conn->query($sql);
 
-echo "<div class='container'>";
+
 echo "<table class='table table-hover'>";
 if ($result->num_rows > 0) {
-    echo "<thead><tr><td>รหัสสินค้า</td><td>ชื่อสินค้า</td><td>ราคา</td><td>รายละเอียด</td></tr></thead><tbody>";
+    echo "<thead><tr><th>รหัสสินค้า</th><th>ชื่อสินค้า</th><th>ราคา</th><th>รายละเอียด</th></tr></thead><tbody>";
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" .$row['p_id']. "</td>";
@@ -38,5 +41,8 @@ $conn->close();
 ?>
 
 </div>
+<?php  include('footer.php'); ?>
+</div>
+
 </body>
 </html>
