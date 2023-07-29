@@ -19,7 +19,7 @@ $sql = "SELECT  p_id, p_name, p_price, p_detail FROM product";
 
 $result = $conn->query($sql);
 
-
+echo "<a href='formaddproduct.php'>เพิ่มสินค้า</a>";
 echo "<table class='table table-hover'>";
 if ($result->num_rows > 0) {
     echo "<thead><tr><th>รหัสสินค้า</th><th>ชื่อสินค้า</th><th>ราคา</th><th>รายละเอียด</th></tr></thead><tbody>";

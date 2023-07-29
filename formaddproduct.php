@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="container">
-        <form action="formaddproduct.php" method="GET">
+        <?php include('header.php') ?>
+        <form action="addproduct.php" method="GET">
         <div class="row row-cols-1 mt-2">
            
             <div class="col-2">
@@ -36,6 +37,7 @@
             
         </div>
     </form>
+    <?php  include('footer.php'); ?>
     </div>
 </body>
 </html>
