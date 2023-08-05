@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
         echo "<td>" .$row['p_price']. "</td>";
         echo "<td>" .$row['p_detail']. "</td>";
         echo "<td><a class='btn btn-outline-warning' href='editproduct.php?p_id=".$p_id."'>Edit</a></td>";
-        echo "<td><a class='btn btn-outline-danger' href='delproduct.php?p_id=".$p_id."'>Del</a></td>";
+        echo "<td><a class='btn btn-outline-danger' href='delete_product_by_id.php?p_id=".$p_id."'>Del</a></td>";
         echo "</tr>";
 }
     echo "<tbody>";

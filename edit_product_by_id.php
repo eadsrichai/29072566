@@ -1,9 +1,4 @@
 <?php
-    $p_id = $_GET['p_id'];
-    $p_name = $_GET['p_name'];
-    $p_price = $_GET['p_price'];
-    $p_detail = $_GET['p_detail'];
-
     include_once('db.php');
 
     $sql = "UPDATE product SET p_name=? , p_price=?, p_detail=?
@@ -12,17 +7,18 @@
     $stmt = $conn->prepare($sql);
 
     $stmt->bind_param("ssss", $name,$price,$detail,$id);
-    $name = $p_name;
-    $price= $p_price;
-    $detail = $p_detail;
-    $id= $p_id;
+    $name = $_GET['p_name'];
+    $price= $_GET['p_price'];
+    $detail = $_GET['p_detail'];
+    $id= $_GET['p_id'];
+    
     $stmt->execute();
 
     // ปิดการเชื่อมต่อฐานข้อมูล
     $stmt->close();
     $conn->close();
     
-    // ไปยังไฟล์ showDep.php
+    // ไปยังไฟล์ showproduct.php
     header( "location: showproduct.php" );
     exit(0);
 ?>
