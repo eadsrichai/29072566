@@ -22,13 +22,23 @@ $result = $conn->query($sql);
 echo "<a href='formaddproduct.php'>เพิ่มสินค้า</a>";
 echo "<table class='table table-hover'>";
 if ($result->num_rows > 0) {
-    echo "<thead><tr><th>รหัสสินค้า</th><th>ชื่อสินค้า</th><th>ราคา</th><th>รายละเอียด</th></tr></thead><tbody>";
+    echo "<thead><tr>
+        <th>รหัสสินค้า</th>
+        <th>ชื่อสินค้า</th>
+        <th>ราคา</th>
+        <th>รายละเอียด</th>
+        <th cols='2' class='text-center'>Action</th>
+        <th></th>
+        </tr></thead><tbody>";
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" .$row['p_id']. "</td>";
+        $p_id = $row['p_id'];
+        echo "<td>" .$p_id. "</td>";
         echo "<td>" .$row['p_name']. "</td>";
         echo "<td>" .$row['p_price']. "</td>";
         echo "<td>" .$row['p_detail']. "</td>";
+        echo "<td><a class='btn btn-outline-warning' href='editproduct.php?p_id=".$p_id."'>Edit</a></td>";
+        echo "<td><a class='btn btn-outline-danger' href='delproduct.php?p_id=".$p_id."'>Del</a></td>";
         echo "</tr>";
 }
     echo "<tbody>";
