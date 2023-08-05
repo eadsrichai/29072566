@@ -20,6 +20,19 @@ $sql = "SELECT  p_id, p_name, p_price, p_detail FROM product";
 $result = $conn->query($sql);
 
 echo "<a href='formaddproduct.php'>เพิ่มสินค้า</a>";
+echo  "<div class='row'>";
+
+echo  "<form action='' method='GET' >";
+echo  "<div class='col-3'>";
+echo  "<input class='form-control' type='text' value=''  name='p_id'/>";
+echo  "<div";
+echo  "<div class='col-3'>";
+echo  "<input class='btn btn-primary' type='submit' value='ค้นหา'  name='find_by_id'/>";
+echo  "<div>";
+echo  "</form>";
+echo  "</div>";
+echo  "</div>";
+
 echo "<table class='table table-hover'>";
 if ($result->num_rows > 0) {
     echo "<thead><tr>
